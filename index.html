@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yummy</title>
+    <link rel="icon" href="img/logo.png" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!----------------------Start spinner ---------------------->
+    <div
+      class="loading-spinner position-fixed bg-black top-0 start-0 end-0 bottom-0 justify-content-center align-items-center"
+    >
+      <i class="fa-solid fa-spin fa-5x fa-spinner"></i>
+    </div>
+    <!----------------------End spinner ---------------------->
+    <!----------------------Start navbar ---------------------->
+    <div class="left-navbar min-vh-100 position-fixed d-flex top-0">
+      <div
+        class="nav-in d-flex flex-column justify-content-between min-vh-100 p-4"
+      >
+        <div class="links">
+          <ul class="list-unstyled overflow-hidden">
+            <li class="py-2 position-relative" id="Search">Search</li>
+            <li class="py-2 position-relative" id="Categories">Categories</li>
+            <li class="py-2 position-relative" id="Area">Area</li>
+            <li class="py-2 position-relative" id="Ingredients">Ingredients</li>
+            <li class="py-2 position-relative" id="Contact-Us">Contact Us</li>
+          </ul>
+        </div>
+        <div class="nav-in-footer">
+          <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <div class="Copyright">
+            <p>Copyright Â© 2019 All Rights <br />Reserved.</p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="nav-out d-flex flex-column justify-content-between py-4 text-center px-2 text-black"
+      >
+        <img src="img/logo.png" class="logo-nav" alt="Yummy logo" />
+        <i class="close-nav fa-solid open-close-icon fa-2x fa-x"></i>
+        <div>
+          <i class="fa-solid fa-globe d-block"></i>
+          <i class="fa-solid fa-share-nodes"></i>
+        </div>
+      </div>
+    </div>
+    <!----------------------End navbar ---------------------->
+
+    <!----------------------Start search -------------------->
+    <div class="container w-75 search-area"></div>
+    <!----------------------End search ---------------------->
+
+    <!----------------------Start Main Content -------------------->
+
+    <div class="Main-Content position-relative min-vh-100">
+      <div class="container">
+        <div class="Box-Of-Meals row py-5 g-4"></div>
+      </div>
+    </div>
+
+    <!----------------------End Main Content ---------------------->
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

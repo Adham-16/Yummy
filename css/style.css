@@ -1,0 +1,71 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #0d0d0d;
+  color: #f9f6f6 !important;
+}
+.loading-spinner {
+  display: flex;
+}
+.loading-spinner i {
+  cursor: pointer;
+}
+/* <!----------------------Start navbar ----------------------> */
+.left-navbar {
+  z-index: 999;
+}
+.left-navbar .nav-in {
+  background-color: #0d0d0d;
+}
+.left-navbar .nav-in ul li {
+  cursor: pointer;
+}
+.left-navbar .nav-out {
+  background-color: #fff;
+}
+.nav-out i {
+  cursor: pointer;
+}
+.logo-nav {
+  width: 50px;
+}
+/* <!----------------------End navbar ----------------------> */
+
+/* <!----------------------Start Main Content --------------------> */
+
+.Main-Content .food {
+  cursor: pointer;
+}
+.Main-Content .food:hover .layer {
+  top: 0;
+}
+.Main-Content .layer {
+  width: 100%;
+  height: 100%;
+  background-color: #f9f6f6ca;
+  top: 100%;
+  transition: all 0.5s;
+}
+/* <!----------------------End Main Content ----------------------> */
+/* <!----------------------Start search --------------------------> */
+
+.change-placeholder-color::placeholder {
+  color: #6c757d;
+}
+/* <!----------------------End search ----------------------------> */
+
+@media screen and (max-width: 1100px) {
+  .Box-Of-Meals {
+    margin-left: 50px;
+  }
+  .details {
+    margin-left: 50px;
+  }
+}
