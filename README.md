@@ -1,6 +1,6 @@
 # Yummy
-# The Demo ==>> https://adham-16.github.io/Yummy/
-# This project is a dynamic and fully responsive website that showcases a variety of cuisines from around the world. Built using HTML, CSS, JavaScript, Bootstrap, and JQuery, the platform seamlessly fetches data from a food API and organizes it into well-structured categories.
+The Demo ==>> https://adham-16.github.io/Yummy/
+This project is a dynamic and fully responsive website that showcases a variety of cuisines from around the world. Built using HTML, CSS, JavaScript, Bootstrap, and JQuery, the platform seamlessly fetches data from a food API and organizes it into well-structured categories.
 
 Key features include:
 
