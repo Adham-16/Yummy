@@ -4,9 +4,14 @@ This project is a dynamic and fully responsive website that showcases a variety 
 
 Key features include:
 
-Cuisine Categories: Meals categorized by country or type (e.g., chicken, beef, seafood, vegetarian).
-Detailed Meal Information: Each dish comes with a recipe, a list of ingredients, and an informative article about its history and cultural significance.
-Video Support: For visual learners, a step-by-step video tutorial is available for every recipe.
-Responsive Design: The website is optimized for all devices, ensuring a smooth user experience.
-Contact Section: A dedicated area allows users to get in touch easily.
+1- Cuisine Categories: Meals categorized by country or type (e.g., chicken, beef, seafood, vegetarian).
+
+2- Detailed Meal Information: Each dish comes with a recipe, a list of ingredients, and an informative article about its history and cultural significance.
+
+3- Video Support: For visual learners, a step-by-step video tutorial is available for every recipe.
+
+4- Responsive Design: The website is optimized for all devices, ensuring a smooth user experience.
+
+5- Contact Section: A dedicated area allows users to get in touch easily.
+
 This project reflects a significant investment of time and effort, with meticulous attention to detail to enhance user engagement and usability. It’s a perfect blend of functionality and design, aimed at providing users with a comprehensive culinary exploration.
