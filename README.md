@@ -15,4 +15,6 @@ Key features include:
 
 5- Contact Section: A dedicated area for user interaction and feedback.
 
+6-Search Functionality: Users can search for meals either by their name or the first letter of the dish, allowing for quick and easy access to their favorite recipes.
+
 This project showcases an effective implementation of API integration, bringing a vast array of culinary information to users' fingertips. With meticulous attention to design and functionality, it reflects a significant effort to provide an immersive and educational exploration of global cuisines.
