@@ -299,14 +299,7 @@ function passwordValidation() {
 function rePasswordValidation() {
     return ($('.get-Password').val() == $('.re-Password').val());
 }
-function clearFields() {
-    $('.get-Name').val('');
-    $('.get-Email').val('');
-    $('.get-Phone').val('');
-    $('.get-Age').val('');
-    $('.get-Password').val('');
-    $('.re-Password').val('');
-}
+
 function nameInputCheck() {
     if (nameValidation()) {
 
@@ -452,11 +445,7 @@ function inputsCheck() {
         $('#submit').addClass("disabled");
     }
 }
-$('#submit').click(function () {
-    if (!$(this).hasClass("disabled")) {
-        clearFields();
-    }
-});
+
 $('#Contact-Us').on('click', function () {
     $(".Box-Of-Meals").html('');
     $('#search_area').html('');
