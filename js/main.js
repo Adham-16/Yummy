@@ -4,8 +4,8 @@ let MainContent = $(".Main-Content")
 let leftNavbar = $(".left-navbar")
 
 $(document).ready(() => {
-    SearchByName('').then( ()=>{
-       $(".loading-spinner").fadeOut(500)
+    SearchByName('').then(() => {
+        $(".loading-spinner").fadeOut(500)
         $(".Main-Content").fadeIn(1000);
     })
 })
@@ -49,10 +49,10 @@ $(".nav-out .close-nav").click(() => {
 function displayMeals(arr) {
     let meals = arr.meals
     if (meals != null) {
-    let Box = ``
-    for (let i = 0; i < Math.min(20, meals.length); i++) {
-        Box +=
-            `
+        let Box = ``
+        for (let i = 0; i < Math.min(20, meals.length); i++) {
+            Box +=
+                `
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
             <div class="food position-relative rounded-2 overflow-hidden "  onclick="mealDetails('${meals[i].idMeal}')">
                     <img src="${meals[i].strMealThumb}" class="w-100" alt="food" />
@@ -62,15 +62,15 @@ function displayMeals(arr) {
             </div>
         </div> 
         `
-        
-    }
-    $(".Box-Of-Meals").html(Box)
-    }else{
-    $(".Box-Of-Meals").html('')
+
+        }
+        $(".Box-Of-Meals").html(Box)
+    } else {
+        $(".Box-Of-Meals").html('')
     }
 }
-    // <!----------------------Start search -------------------->
-$("#Search").click(function () { 
+// <!----------------------Start search -------------------->
+$("#Search").click(function () {
     $(".Box-Of-Meals").html('')
     closeSideNav()
     showSearch()
@@ -90,10 +90,10 @@ function showSearch() {
 }
 
 async function SearchByName(term) {
-        let Meals = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`);
-        let Data = await Meals.json();
-        displayMeals(Data)
-        closeSideNav()
+    let Meals = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`);
+    let Data = await Meals.json();
+    displayMeals(Data)
+    closeSideNav()
 }
 
 
@@ -103,8 +103,8 @@ async function SearchFirstLetter(term) {
     displayMeals(Data)
     closeSideNav()
 }
-    // <!----------------------End search ---------------------->
-    // <!----------------------Start Show Details -------------------->
+// <!----------------------End search ---------------------->
+// <!----------------------Start Show Details -------------------->
 async function mealDetails(id) {
     let Meals = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
     let Data = await Meals.json();
@@ -124,14 +124,14 @@ function showMealDetails(details) {
         }
     }
     if (Data.strTags != null) {
-      tags = Data.strTags.split(',');
-      for (let i = 0; i < tags.length; ++i) {
-         tagsGroup += `<li class="alert alert-danger m-2 p-1">${tags[i]}</li>`
-      }
-   } else {
-      tagsGroup = `<li class="alert alert-danger m-2 p-1">None</li>`;
-   }
-   
+        tags = Data.strTags.split(',');
+        for (let i = 0; i < tags.length; ++i) {
+            tagsGroup += `<li class="alert alert-danger m-2 p-1">${tags[i]}</li>`
+        }
+    } else {
+        tagsGroup = `<li class="alert alert-danger m-2 p-1">None</li>`;
+    }
+
     $(".Box-Of-Meals").html(`
         <div class="col-md-4">
             <div class="left-side">
@@ -161,24 +161,24 @@ function showMealDetails(details) {
 
 }
 
-    // <!----------------------End Show Details ---------------------->
-    // <!----------------------Start Filter by Category -------------------->
-    $("#Categories").click(function () { 
-        $(".Box-Of-Meals").html('')
-        $(".search-area").html('')
-        closeSideNav()
-        categories()
-    });
+// <!----------------------End Show Details ---------------------->
+// <!----------------------Start Filter by Category -------------------->
+$("#Categories").click(function () {
+    $(".Box-Of-Meals").html('')
+    $(".search-area").html('')
+    closeSideNav()
+    categories()
+});
 async function categories() {
     let Meals = await fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`);
     let Data = await Meals.json();
-    
+
     showCategories(Data.categories)
 }
 function showCategories(arr) {
     let Categories = ``
     for (let i = 0; i < Math.min(20, arr.length); i++) {
-        Categories +=`
+        Categories += `
          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
             <div class="food position-relative rounded-2 overflow-hidden" onclick="filterByCategory('${arr[i].strCategory}')">
               <img src="${arr[i].strCategoryThumb}" class="w-100" alt="food" />
@@ -186,7 +186,7 @@ function showCategories(arr) {
                 class="layer text-center position-absolute overflow-hidden text-black p-2"
               >
                 <h3> ${arr[i].strCategory} </h3>
-                <p> ${arr[i].strCategoryDescription.split(" ").slice(0,20).join(" ")}</p>
+                <p> ${arr[i].strCategoryDescription.split(" ").slice(0, 20).join(" ")}</p>
               </div>
             </div>
           </div>
@@ -200,14 +200,14 @@ async function filterByCategory(Category) {
     displayMeals(Data)
     closeSideNav()
 }
-    // <!----------------------End Filter by Category ---------------------->
-    // <!----------------------Start Filter by Area -------------------->
-    $("#Area").click(function () { 
-        $(".Box-Of-Meals").html('')
-        $(".search-area").html('')
-        closeSideNav()
-        area()
-    });
+// <!----------------------End Filter by Category ---------------------->
+// <!----------------------Start Filter by Area -------------------->
+$("#Area").click(function () {
+    $(".Box-Of-Meals").html('')
+    $(".search-area").html('')
+    closeSideNav()
+    area()
+});
 async function area() {
     let Meals = await fetch(`https://www.themealdb.com/api/json/v1/1/list.php?a=list`);
     let Data = await Meals.json();
@@ -215,10 +215,10 @@ async function area() {
     closeSideNav()
 }
 function showArea(arr) {
-    
+
     let Area = ``
     for (let i = 0; i < arr.length; i++) {
-        Area +=`
+        Area += `
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                 <div class="food text-center rounded-2 "   onclick="filterByArea('${arr[i].strArea}')" >
                     <i class="fa-solid fa-house-laptop fa-4x"></i>
@@ -235,14 +235,14 @@ async function filterByArea(Area) {
     displayMeals(Data)
     closeSideNav()
 }
-    // <!----------------------End Filter by Area ---------------------->
-    // <!----------------------Start Filter by main ingredient -------------------->
-    $("#Ingredients").click(function () { 
-        $(".Box-Of-Meals").html('')
-        $(".search-area").html('')
-        closeSideNav()
-        Ingredients()
-    });
+// <!----------------------End Filter by Area ---------------------->
+// <!----------------------Start Filter by main ingredient -------------------->
+$("#Ingredients").click(function () {
+    $(".Box-Of-Meals").html('')
+    $(".search-area").html('')
+    closeSideNav()
+    Ingredients()
+});
 async function Ingredients() {
     let Meals = await fetch(`https://www.themealdb.com/api/json/v1/1/list.php?i=list`);
     let Data = await Meals.json();
@@ -253,12 +253,12 @@ function showIngredient(arr) {
 
     let Ingredient = ``
     for (let i = 0; i < Math.min(20, arr.length); i++) {
-        Ingredient +=`
+        Ingredient += `
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                 <div class="food text-center rounded-2 "   onclick="filterByIngredient('${arr[i].strIngredient}')" >
                     <img src="https://www.themealdb.com/images/ingredients/${arr[i].strIngredient}.png" class="w-50">
                     <h3>${arr[i].strIngredient}</h3>
-                    <p>${arr[i].strDescription.split(" ").slice(0,20).join(" ")}</p>
+                    <p>${arr[i].strDescription.split(" ").slice(0, 20).join(" ")}</p>
                 </div>
             </div>
         `
@@ -271,7 +271,7 @@ async function filterByIngredient(Ingredient) {
     displayMeals(Data)
     closeSideNav()
 }
-    // <!----------------------End Filter by main ingredient ---------------------->
+// <!----------------------End Filter by main ingredient ---------------------->
 
 
 const nameRegex = /^[\w\s]*[^\d\W_][\w\s]*$/i;
@@ -284,7 +284,7 @@ function nameValidation() {
     return nameRegex.test($('.get-Name').val());
 }
 function emailValidation() {
-   return emailRegex.test($('.get-Email').val());
+    return emailRegex.test($('.get-Email').val());
 }
 function numberValidation() {
     return phoneRegex.test($('.get-Phone').val());
@@ -299,17 +299,24 @@ function passwordValidation() {
 function rePasswordValidation() {
     return ($('.get-Password').val() == $('.re-Password').val());
 }
-
+function clearFields() {
+    $('.get-Name').val('');
+    $('.get-Email').val('');
+    $('.get-Phone').val('');
+    $('.get-Age').val('');
+    $('.get-Password').val('');
+    $('.re-Password').val('');
+}
 function nameInputCheck() {
     if (nameValidation()) {
-        
+
         $(".get-Name").addClass("is-valid");
         $(".get-Name").removeClass("is-invalid");
         $("#nameAlert").addClass("d-none");
-    
+
     }
     else {
-        
+
         $(".get-Name").addClass("is-invalid");
         $(".get-Name").removeClass("is-valid");
         $("#nameAlert").removeClass("d-none");
@@ -326,14 +333,14 @@ function nameInputCheck() {
 
 function emailInputCheck() {
     if (emailValidation()) {
-        
+
         $(".get-Email").addClass("is-valid");
         $(".get-Email").removeClass("is-invalid");
         $("#emailAlert").addClass("d-none");
-    
+
     }
     else {
-        
+
         $(".get-Email").removeClass("is-valid");
         $(".get-Email").addClass("is-invalid");
         $("#emailAlert").removeClass("d-none");
@@ -349,14 +356,14 @@ function emailInputCheck() {
 
 function numberInputCheck() {
     if (numberValidation()) {
-        
+
         $(".get-Phone").addClass("is-valid");
         $(".get-Phone").removeClass("is-invalid");
         $("#phoneAlert").addClass("d-none");
-    
+
     }
     else {
-    
+
         $(".get-Phone").removeClass("is-valid");
         $(".get-Phone").addClass("is-invalid");
         $("#phoneAlert").removeClass("d-none");
@@ -373,13 +380,13 @@ function numberInputCheck() {
 
 function ageInputCheck() {
     if (ageValidation()) {
-        
+
         $(".get-Age").addClass("is-valid");
         $(".get-Age").removeClass("is-invalid");
         $("#ageAlert").addClass("d-none");
     }
     else {
-        
+
         $(".get-Age").removeClass("is-valid");
         $(".get-Age").addClass("is-invalid");
         $("#ageAlert").removeClass("d-none");
@@ -396,13 +403,13 @@ function ageInputCheck() {
 
 function passwordInputCheck() {
     if (passwordValidation()) {
-        
+
         $(".get-Password").addClass("is-valid");
         $(".get-Password").removeClass("is-invalid");
         $("#passwordAlert").addClass("d-none");
     }
     else {
-        
+
         $(".get-Password").removeClass("is-valid");
         $(".get-Password").addClass("is-invalid");
         $("#passwordAlert").removeClass("d-none");
@@ -419,13 +426,13 @@ function passwordInputCheck() {
 
 function rePasswordInputCheck() {
     if (rePasswordValidation()) {
-        
+
         $(".re-Password").addClass("is-valid");
         $(".re-Password").removeClass("is-invalid");
         $("#rePasswordAlert").addClass("d-none");
     }
     else {
-        
+
         $(".re-Password").removeClass("is-valid");
         $(".re-Password").addClass("is-invalid");
         $("#rePasswordAlert").removeClass("d-none");
@@ -441,10 +448,11 @@ function rePasswordInputCheck() {
 function inputsCheck() {
     if (nameValidation() && emailValidation() && numberValidation() && ageValidation() && passwordValidation() && rePasswordValidation()) {
         $('#submit').removeClass("disabled");
+        clearFields();
     } else {
         $('#submit').addClass("disabled");
     }
-}  
+}
 
 $('#Contact-Us').on('click', function () {
     $(".Box-Of-Meals").html('');
