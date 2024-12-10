@@ -448,12 +448,15 @@ function rePasswordInputCheck() {
 function inputsCheck() {
     if (nameValidation() && emailValidation() && numberValidation() && ageValidation() && passwordValidation() && rePasswordValidation()) {
         $('#submit').removeClass("disabled");
-        clearFields();
     } else {
         $('#submit').addClass("disabled");
     }
 }
-
+$('#submit').click(function () {
+    if (!$(this).hasClass("disabled")) {
+        clearFields();
+    }
+});
 $('#Contact-Us').on('click', function () {
     $(".Box-Of-Meals").html('');
     $('#search_area').html('');
